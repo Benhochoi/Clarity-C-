@@ -1,0 +1,4 @@
+3
+NCC01|NCC-A|Ha Noi|0987654311|A@gmail.com
+NCC02|NCC-B|Da Nang|0987654322|B@gmail.com
+NCC03|NCC-C|Nam Dinh|0987654333|C@gmail.com

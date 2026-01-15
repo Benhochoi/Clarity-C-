@@ -1,0 +1,6 @@
+5
+NV01|Phan Van K|07/12/2004|Nam|Nam Dinh|0987651234|k@gmail.com|Quan ly|7000000|0
+NV02|Mai Thi N|04/10/2001|Nu|Ha Noi|0912873465|n@gmail.com|Nv tv-CSKH|5000000|0
+NV03|Dinh Thi Y|08/03/1997|Nu|Quang Ninh|0981256743|y@gmail.com|Nv ban hang|4000000|650000
+NV04|Hoang Nguyen Q|09/09/2002|Nam|Thanh Hoa|0912384756|q@gmail.com|Nv ban hang|4000000|650000
+NV05|Nguyen Dinh T|19/01/2002|Nu|Ha Noi|0981726354|t@gmail.com|Nv ban hang|4000000|650000
