@@ -511,4 +511,4 @@ If this project helped you, please give it a ⭐️! It motivates us to continue
 <div align="center">
 Made with ❤️ by [Team Name]
 ⬆ Back to Top
-</div>Claude est une IA et peut faire des erreurs. Veuillez vérifier les réponses.
+</div>
