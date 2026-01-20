@@ -1,149 +1,200 @@
 🏥 Pharmacy Management System
-
-Hệ thống quản lý nhà thuốc toàn diện với C++ - Quản lý khách hàng, nhân viên, thuốc, hóa đơn và báo cáo thống kê
-
-<div align="center">
 Afficher l'image
 Afficher l'image
 Afficher l'image
 Afficher l'image
-</div>
+📋 Table of Contents
 
-📋 Overview
-Pharmacy Management System là ứng dụng console C++ giúp quản lý toàn diện hoạt động của nhà thuốc, bao gồm:
-
-Quản lý thông tin khách hàng (bao gồm hệ thống tích điểm VIP)
-Quản lý nhân viên với tính lương tự động
-Quản lý kho thuốc và nhà cung cấp
-Tạo và theo dõi hóa đơn bán hàng
-Báo cáo thống kê doanh thu và tồn kho
-
-Hệ thống được thiết kế theo hướng đối tượng (OOP) với các tính năng:
-
-Kế thừa (Inheritance): Nguoi → KhachHang, NhanVien
-Đóng gói (Encapsulation): Private attributes với getter/setter
-Đa hình (Polymorphism): Virtual functions cho xuat()
-Nạp chồng toán tử (Operator Overloading): <<, >> cho I/O
+About The Project
+Key Features
+Technology Stack
+System Architecture
+Installation & Setup
+Usage Guide
+Project Structure
+Design Patterns
+Challenges & Solutions
+Future Roadmap
+Contributing
+Team
+License
 
 
-✨ Features
-🧑‍🤝‍🧑 Quản lý Khách hàng
+🎯 About The Project
+The Pharmacy Management System is a comprehensive console-based application designed to streamline pharmacy operations. Built with C++, this system provides a robust solution for managing customers, employees, suppliers, medications, and sales transactions with an emphasis on data integrity and user-friendly workflows.
+Why This Project?
 
-✅ Thêm/sửa/xóa khách hàng với validation (SDT, email, mã trùng)
-✅ Hệ thống tích điểm tự động (>200 điểm → VIP)
-✅ Giảm giá 10% cho khách VIP
-✅ Tìm kiếm theo tên/SĐT/ngày sinh (không phân biệt hoa thường)
-✅ Lưu/đọc dữ liệu từ file khachhang.txt
-
-👨‍💼 Quản lý Nhân viên
-
-✅ Quản lý thông tin nhân viên (mã, email không trùng)
-✅ Tính lương tự động: Tổng lương = Lương cơ bản × 3 + Phụ cấp
-✅ Validation email (phải có @)
-✅ Tìm kiếm và báo cáo nhân viên
-✅ Lưu/đọc file nhanvien.txt
-
-💊 Quản lý Thuốc & Nhà cung cấp
-
-✅ Quản lý thông tin thuốc (mã, tên, giá, tồn kho, HSD)
-✅ Liên kết với nhà cung cấp (validation mã NCC)
-✅ Cảnh báo thuốc sắp hết hàng (< 10 sp)
-✅ Cập nhật tồn kho tự động khi bán
-✅ Quản lý nhà cung cấp (mã, email không trùng)
-
-🧾 Quản lý Hóa đơn
-
-✅ Tạo hóa đơn với nhiều loại thuốc
-✅ Kiểm tra tồn kho trước khi bán
-✅ Tự động trừ kho và cộng điểm tích lũy (1% giá trị đơn)
-✅ Áp dụng giảm giá VIP tự động
-✅ Xóa hóa đơn với hoàn trả thuốc về kho
-✅ Lưu chi tiết hóa đơn vào hoadon.txt
-
-📊 Thống kê & Báo cáo
-
-✅ Doanh thu tổng và theo ngày
-✅ Top N thuốc bán chạy nhất
-✅ Thống kê khách hàng (VIP/Thường, điểm TB)
-✅ Danh sách thuốc sắp hết hàng
-
-🔍 Tìm kiếm nâng cao
-
-✅ Tìm kiếm không phân biệt hoa thường
-✅ Hỗ trợ tìm theo nhiều tiêu chí (tên, mã, SĐT, ngày)
+Real-world Application: Addresses actual pharmacy management challenges
+Educational Value: Demonstrates OOP principles, file I/O, and data structures
+Scalable Design: Modular architecture allows easy feature expansion
+Data Persistence: File-based storage ensures data retention across sessions
 
 
-🛠️ Requirements
-Môi trường phát triển
+✨ Key Features
+👥 Customer Management
 
-Compiler:
+Add, edit, delete, and search customers
+Automatic VIP classification based on loyalty points (>200 points)
+Track customer purchase history and rewards
+Phone number and duplicate ID validation
 
-GCC 5.0+ / Clang 3.4+ / MSVC 2015+ (hỗ trợ C++11)
+👔 Employee Management
+
+Complete employee records with salary calculations
+Automatic salary computation (Base Salary × 3 + Allowances)
+Email validation with duplicate prevention
+Role-based information tracking
+
+💊 Medication Management
+
+Comprehensive drug inventory system
+Supplier linking and traceability
+Expiration date tracking
+Stock level monitoring with low-stock alerts
+Price validation (selling price must exceed purchase price)
+
+📦 Supplier Management
+
+Supplier database with contact information
+Email and phone validation
+Linked medication tracking
+Duplicate prevention mechanisms
+
+🧾 Invoice System
+
+Multi-item invoice creation
+Automatic stock deduction upon sale
+VIP customer discount application (10% for VIP)
+Loyalty points accrual (1% of total)
+Invoice deletion with stock restoration
+
+🔍 Advanced Search Capabilities
+
+Case-insensitive search across all entities
+Multi-field search (name, phone, date, ID)
+Real-time search results display
+
+📊 Analytics & Reporting
+
+Revenue Analytics:
+
+Total revenue calculation
+Daily revenue breakdown
+Date-range analysis
 
 
-OS: Windows 7+, Linux (Ubuntu 18.04+), macOS 10.12+
-RAM: 512MB khả dụng
-Disk: 50MB cho source code + data files
+Product Analytics:
 
-Dependencies
-
-Standard Template Library (STL) - đã có sẵn trong C++11
-Không yêu cầu thư viện ngoài (pure C++)
+Top N best-selling medications
+Sales volume tracking
+Low-stock alerts (customizable threshold)
 
 
-🚀 Build & Run
-Phương pháp 1: CMake (Khuyến nghị)
-<details>
-<summary><b>📦 Windows (Visual Studio / MinGW)</b></summary>
-````bash
-# Clone hoặc giải nén source code
-cd Nhom_9
-Tạo thư mục build
-mkdir build && cd build
-Cấu hình CMake
-cmake ..
-Build (chọn 1 trong 2)
-Với Visual Studio:
-cmake --build . --config Release
-Với MinGW:
-mingw32-make
-Chạy
-.\Release\PharmacyManagement.exe  # Visual Studio
-.\PharmacyManagement.exe          # MinGW
-</details>
+Customer Analytics:
 
-<details>
-<summary><b>🐧 Linux / macOS</b></summary>
-````bash
-# Clone hoặc giải nén source code
-cd Nhom_9
+VIP vs. Regular customer ratios
+Average loyalty points
+Total loyalty points distribution
 
-# Tạo và build
-mkdir build && cd build
-cmake ..
-make -j$(nproc)  # Linux
-make -j$(sysctl -n hw.ncpu)  # macOS
 
-# Chạy
-./PharmacyManagement
-</details>
-Phương pháp 2: Compile trực tiếp
-Linux / macOS
-bashg++ -std=c++11 -o pharmacy "Nhóm 9.cpp"
-./pharmacy
-Windows (MinGW)
-cmdg++ -std=c++11 -o pharmacy.exe "Nhóm 9.cpp"
-pharmacy.exe
-Windows (MSVC)
-cmdcl /EHsc /std:c++11 "Nhóm 9.cpp" /Fe:pharmacy.exe
-pharmacy.exe
+
+💾 Data Persistence
+
+Text-based file storage for all entities
+Automatic data loading on startup
+Manual save/load functionality
+Data integrity validation
+
+
+🛠 Technology Stack
+Core Technologies
+TechnologyPurposeJustificationC++ (STL)Primary languagePerformance, memory control, OOP supportStandard LibraryData structuresVectors, maps for efficient data managementFile I/O StreamsData persistenceSimple, portable text-based storage
+Why C++ & STL?
+
+Performance: Native compilation for fast execution
+Memory Management: Direct control over resources
+OOP Support: Perfect for modeling real-world entities
+Cross-Platform: Runs on Windows, Linux, macOS
+Educational: Demonstrates core CS concepts
+
+
+🏗 System Architecture
+Class Hierarchy
+Nguoi (Abstract Base Class)
+├── KhachHang (Customer)
+└── NhanVien (Employee)
+
+Independent Classes:
+├── NhaCungCap (Supplier)
+├── Thuoc (Medication)
+├── HoaDon (Invoice)
+└── ChiTietHoaDon (Invoice Detail)
+
+Service Classes:
+├── SearchService
+└── StatsService
+Key Relationships
+
+Customer ↔ Invoice: One-to-many relationship
+Employee ↔ Invoice: One-to-many relationship
+Medication ↔ Supplier: Many-to-one relationship
+Invoice ↔ Invoice Details: One-to-many composition
+Invoice Detail ↔ Medication: Many-to-one reference
+
+
+📥 Installation & Setup
+Prerequisites
+
+C++ Compiler: GCC 7.0+ or MSVC 2017+ or Clang 5.0+
+Operating System: Windows, Linux, or macOS
+RAM: Minimum 512MB
+Storage: 10MB free space
+
+Installation Steps
+
+Clone the repository
+
+bash   git clone https://github.com/yourusername/pharmacy-management-system.git
+   cd pharmacy-management-system
+
+Compile the program
+Using GCC (Linux/macOS):
+
+bash   g++ -std=c++11 -o pharmacy "Nhóm 9.cpp"
+Using MSVC (Windows):
+cmd   cl /EHsc /std:c++11 "Nhóm 9.cpp" /Fe:pharmacy.exe
+Using Make (if Makefile provided):
+bash   make
+
+Run the application
+Linux/macOS:
+
+bash   ./pharmacy
+Windows:
+cmd   pharmacy.exe
+```
+
+### File Structure After First Run
+```
+pharmacy-management-system/
+├── Nhóm 9.cpp          # Main source file
+├── pharmacy            # Compiled executable (Linux/macOS)
+├── pharmacy.exe        # Compiled executable (Windows)
+├── khachhang.txt       # Customer data file
+├── nhanvien.txt        # Employee data file
+├── thuoc.txt           # Medication data file
+├── nhacungcap.txt      # Supplier data file
+├── hoadon.txt          # Invoice data file
+└── README.md           # This file
 ```
 
 ---
 
-## 📖 Usage
+## 📖 Usage Guide
 
-### Giao diện chính
+### Main Menu Navigation
+
+Upon launching, you'll see the main menu:
 ```
 ============= MENU CHINH =============
 1. Quan ly khach hang
@@ -155,771 +206,309 @@ pharmacy.exe
 7. Thong ke
 0. Thoat
 ======================================
-Chon:
 ```
 
-### Ví dụ: Tạo hóa đơn mới
+### Quick Start Workflow
 
-**Input:**
+#### 1. **Setting Up Suppliers**
+   - Navigate to `5. Quan ly nha cung cap`
+   - Add suppliers before adding medications
+   - Ensure unique supplier IDs and emails
+
+#### 2. **Adding Medications**
+   - Navigate to `3. Quan ly thuoc`
+   - Link medications to existing suppliers
+   - Set purchase and selling prices (selling > purchase)
+
+#### 3. **Registering Customers**
+   - Navigate to `1. Quan ly khach hang`
+   - Enter customer details with valid phone format (10-11 digits, starts with 0)
+   - Initial loyalty points determine classification
+
+#### 4. **Adding Employees**
+   - Navigate to `2. Quan ly nhan vien`
+   - Provide complete employee information
+   - System calculates total salary automatically
+
+#### 5. **Creating Invoices**
+   - Navigate to `4. Quan ly hoa don`
+   - Select existing customer and employee IDs
+   - Add medications by ID (stock checked automatically)
+   - System applies VIP discounts and updates loyalty points
+
+### Data Management
+
+#### Saving Data
+- Select the "Ghi file" option in each management menu
+- Data is saved to respective `.txt` files
+- All current data is overwritten
+
+#### Loading Data
+- Select the "Doc file" option in each management menu
+- Loads data from `.txt` files
+- Validates data format before loading
+
+### Search Functionality
+
+**Customer Search Example:**
 ```
-Chon: 4
-========== QUAN LY HOA DON ==========
-1. Tao hoa don moi
-Chon: 1
-
-Ma hoa don: HD001
-Ma khach hang: KH001
-Ma nhan vien: NV001
-Ngay lap (dd/mm/yyyy): 15/01/2026
-So loai thuoc mua: 2
-
---- Thuoc thu 1 ---
-Ma thuoc: T001
-Ten thuoc: Paracetamol 500mg
-Gia ban: 50000 VND
-So luong ton: 100
-So luong mua: 10
-
---- Thuoc thu 2 ---
-Ma thuoc: T002
-Ten thuoc: Amoxicillin 250mg
-Gia ban: 75000 VND
-So luong ton: 50
-So luong mua: 5
+Nhap tu khoa (ten/sdt/ngay sinh): Nguyen
 ```
+- Searches across name, phone, and birth date fields
+- Case-insensitive matching
+- Displays all matching records
 
-**Output:**
-```
-============== HOA DON ==============
-Ma hoa don: HD001
-Ma khach hang: KH001
-Ma nhan vien: NV001
-Ngay lap: 15/01/2026
--------------------------------------
-Ma thuoc    Ten thuoc                     SL        Don gia        Thanh tien     
-----------------------------------------------------------------------------------
-T001        Paracetamol 500mg             10        50000          500000         
-T002        Amoxicillin 250mg             5         75000          375000         
-----------------------------------------------------------------------------------
-TONG TIEN:                        875000 VND
-GIAM GIA:                          87500 VND  (10% cho VIP)
-THANH TOAN:                       787500 VND
-=====================================
+### Analytics Examples
 
-=> Cong diem tich luy: +7.88 diem cho KH001
+**Top Selling Medications:**
 ```
+Nhap N: 5
+```
+Returns the top 5 best-selling medications by quantity.
 
-### Ví dụ: Thống kê doanh thu
+**Low Stock Alert:**
+```
+Nhap nguong toi thieu (mac dinh 10): 15
+Lists all medications with stock below 15 units.
 
-**Input:**
-```
-Chon: 7
-========== THONG KE & BAO CAO ==========
-2. Doanh thu theo ngay
-```
+📂 Project Structure
+Core Components
+cpp// Abstract Base Class
+class Nguoi {
+    protected:
+        string hoTen, ngaySinh, gioiTinh, diaChi, soDienThoai;
+    public:
+        virtual void xuat() const = 0;  // Pure virtual function
+};
 
-**Output:**
-```
-Ngay                 Doanh thu (VND)
------------------------------------
-14/01/2026                  1250000
-15/01/2026                  2100000
-16/01/2026                   875000
+// Customer with Loyalty System
+class KhachHang : public Nguoi {
+    private:
+        string maKH, loaiKH;
+        double diemTichLuy;
+        void capNhatLoaiKH();  // Auto VIP classification
+};
+
+// Invoice with Details
+class HoaDon {
+    private:
+        vector<ChiTietHoaDon> danhSachThuoc;
+        double tongTien, giamGia, thanhToan;
+    public:
+        void apDungGiamGia(double phanTram);
+};
+Validation Functions
+cpp// Phone validation: 10-11 digits, starts with '0'
+bool kiemTraSDT(const string& sdt);
+
+// Case-insensitive search
+bool containsCaseInsensitive(const string& hay, const string& needle);
+
+// String normalization
+string toLowerStr(string s);
+
+🎨 Design Patterns
+1. Inheritance & Polymorphism
+
+Nguoi abstract base class for KhachHang and NhanVien
+Virtual functions for extensibility
+
+2. Composition
+
+HoaDon contains ChiTietHoaDon objects
+Strong ownership relationship
+
+3. Service Layer Pattern
+
+SearchService: Centralized search functionality
+StatsService: Centralized analytics logic
+Separation of concerns
+
+4. Operator Overloading
+
+operator>> and operator<< for intuitive I/O
+Consistent interface across all entity classes
+
+5. Friend Functions
+
+File I/O functions access private members directly
+Maintains encapsulation while enabling serialization
+
+
+💡 Challenges & Solutions
+Challenge 1: Data Integrity Across Files
+Problem: Maintaining referential integrity (e.g., invoice references valid customer/employee/medication IDs)
+Solution:
+
+Validation checks before entity creation
+ID existence verification across linked entities
+Transaction-like operations for invoice creation (rollback on error)
+
+Challenge 2: Vietnamese Character Encoding
+Problem: Console display issues with Vietnamese diacritics
+Solution:
+
+UTF-8 encoding in source files
+Platform-specific console configuration hints in comments
+ASCII-safe ID fields for core functionality
+
+Challenge 3: Data Persistence Format
+Problem: Balancing human readability and parsing efficiency
+Solution:
+
+Pipe-delimited (|) text format
+First line contains entity count for efficient allocation
+Hierarchical format for complex objects (invoices with details)
+
+Challenge 4: Stock Management in Invoice Deletion
+Problem: Ensuring stock is restored when invoices are deleted
+Solution:
+
+xoaHoaDon() function iterates through invoice details
+Calls tangSoLuong() on each medication before deletion
+Confirmation prompt to prevent accidental data loss
+
+Challenge 5: Loyalty Points & VIP Classification
+Problem: Automatic classification updates when points change
+Solution:
+
+capNhatLoaiKH() private method called after point modifications
+Threshold-based logic (>200 points = VIP)
+Immediate feedback to users on classification changes
+
+
+🚀 Future Roadmap
+Phase 1: Enhanced User Experience
+
+ GUI Development: Qt or wxWidgets-based interface
+ Multi-language Support: English, Vietnamese localization
+ User Roles & Permissions: Admin, Pharmacist, Cashier roles
+ Session Management: User login and activity logging
+
+Phase 2: Advanced Features
+
+ Database Integration: Migrate to SQLite or MySQL
+ Prescription Management: Doctor prescription tracking
+ Expiration Alerts: Automated notifications for expiring medications
+ Barcode Scanning: Integration with barcode readers
+ Receipt Printing: Thermal printer support
+
+Phase 3: Analytics & Reporting
+
+ Visual Reports: Charts and graphs (matplotlib C++ binding or export to CSV)
+ Sales Forecasting: Predictive analytics for inventory
+ Profit Analysis: Cost vs. revenue tracking
+ Export Functionality: PDF/Excel report generation
+
+Phase 4: Integration & Scalability
+
+ REST API: Backend service for web/mobile clients
+ Cloud Sync: Multi-branch data synchronization
+ Backup Automation: Scheduled backups to cloud storage
+ Audit Trail: Complete transaction history logging
+
+
+🤝 Contributing
+We welcome contributions from the community! Here's how you can help:
+Getting Started
+
+Fork the repository
+Create a feature branch
+
+bash   git checkout -b feature/AmazingFeature
+
+Commit your changes
+
+bash   git commit -m "Add some AmazingFeature"
+
+Push to the branch
+
+bash   git push origin feature/AmazingFeature
+
+Open a Pull Request
+
+Contribution Guidelines
+
+Follow existing code style and naming conventions
+Add comments for complex logic (preferably in English)
+Update documentation for new features
+Test thoroughly before submitting PR
+Include unit tests if applicable
+
+Code Style
+cpp// Use camelCase for variables and functions
+int soLuongTon;
+void capNhatGiaTri();
+
+// Use PascalCase for classes
+class KhachHang;
+
+// Use UPPER_CASE for constants
+const int MAX_ITEMS = 100;
+
+// Add comments for non-obvious logic
+// Rang buoc: gia ban phai lon hon gia nhap
+while(giaNhap > giaBan) {
+    // ...
+}
+Reporting Bugs
+Use GitHub Issues with the following template:
+markdown**Bug Description**: [Clear description]
+**Steps to Reproduce**: [Numbered steps]
+**Expected Behavior**: [What should happen]
+**Actual Behavior**: [What actually happens]
+**Environment**: [OS, Compiler version]
+**Screenshots**: [If applicable]
 ```
 
 ---
 
-## 📁 Project Structure
-```
-Nhóm 9/
-│
-├── Nhóm 9.cpp              # Main source code (toàn bộ logic)
-│
-├── README.md               # Tài liệu này
-├── CMakeLists.txt          # TODO: Thêm file CMake config
-│
-├── data/                   # Thư mục data files (tự tạo khi chạy)
-│   ├── khachhang.txt       # Dữ liệu khách hàng
-│   ├── nhanvien.txt        # Dữ liệu nhân viên
-│   ├── thuoc.txt           # Dữ liệu thuốc
-│   ├── nhacungcap.txt      # Dữ liệu nhà cung cấp
-│   └── hoadon.txt          # Dữ liệu hóa đơn
-│
-└── docs/                   # TODO: Thêm tài liệu kỹ thuật
-    ├── class-diagram.png   # Sơ đồ lớp UML
-    └── user-manual.pdf     # Hướng dẫn sử dụng
-```
+## 👥 Team
 
-### Các lớp chính (Classes)
+### Development Team
 
-| Class | Mô tả | File |
-|-------|-------|------|
-| `Nguoi` | Lớp trừu tượng cơ sở cho Người | Nhóm 9.cpp:43 |
-| `KhachHang` | Quản lý thông tin khách hàng + tích điểm | Nhóm 9.cpp:63 |
-| `NhanVien` | Quản lý nhân viên + tính lương | Nhóm 9.cpp:293 |
-| `NhaCungCap` | Quản lý nhà cung cấp | Nhóm 9.cpp:532 |
-| `Thuoc` | Quản lý thuốc + tồn kho | Nhóm 9.cpp:728 |
-| `ChiTietHoaDon` | Chi tiết từng dòng thuốc trong hóa đơn | Nhóm 9.cpp:965 |
-| `HoaDon` | Quản lý hóa đơn bán hàng | Nhóm 9.cpp:993 |
-| `SearchService` | Service tìm kiếm (static methods) | Nhóm 9.cpp:1423 |
-| `StatsService` | Service thống kê (static methods) | Nhóm 9.cpp:1545 |
+| Name | Role | GitHub |
+|------|------|--------|
+| **[Member 1]** | Team Lead / Backend Developer | [@username1](https://github.com/username1) |
+| **[Member 2]** | Core Developer / Data Management | [@username2](https://github.com/username2) |
+| **[Member 3]** | UI/UX / Testing | [@username3](https://github.com/username3) |
+| **[Member 4]** | Documentation / QA | [@username4](https://github.com/username4) |
 
----
+### Acknowledgments
 
-## ⚙️ Configuration
-
-### File Formats
-
-Dữ liệu được lưu dạng text với delimiter `|`:
-
-**khachhang.txt:**
-```
-3
-KH001|Nguyen Van A|01/01/1990|Nam|Ha Noi|0912345678|150.5
-KH002|Tran Thi B|15/05/1985|Nu|TP.HCM|0987654321|250.0
-```
-
-**hoadon.txt:**
-```
-HD:HD001|KH001|NV001|15/01/2026|875000|87500|787500
-CT:T001|Paracetamol 500mg|10|50000
-CT:T002|Amoxicillin 250mg|5|75000
-Validation Rules
-FieldRuleMã KH/NV/Thuốc/NCCKhông trùng, không rỗngSố điện thoại10-11 số, bắt đầu bằng 0EmailPhải chứa @, không trùngGiá nhập/bán> 0, giá bán ≥ giá nhậpSố lượng tồn≥ 0Điểm tích lũy≥ 0, VIP nếu > 200
-
-🧪 Testing
-Manual Testing Checklist
-
- Khách hàng
-
- Thêm KH mới với validation đầy đủ
- Kiểm tra hệ thống VIP tự động (>200 điểm)
- Sửa thông tin không làm trùng mã
- Xóa KH và kiểm tra ràng buộc với hóa đơn (TODO)
-
-
- Hóa đơn
-
- Tạo hóa đơn với tồn kho đủ
- Kiểm tra lỗi khi tồn kho không đủ
- Xác nhận trừ kho tự động
- Kiểm tra giảm giá VIP
- Xóa hóa đơn và hoàn trả kho
-
-
- File I/O
-
- Ghi và đọc lại dữ liệu không mất
- Xử lý file không tồn tại
- Xử lý dữ liệu lỗi format
-
-
-
-Test Data (Mẫu)
-bash# TODO: Thêm folder test-data/ với các file .txt mẫu
-
-🐛 Troubleshooting
-Lỗi biên dịch
-Lỗi: 'stod' is not a member of 'std'
-bash# Giải pháp: Đảm bảo compile với C++11
-g++ -std=c++11 "Nhóm 9.cpp"
-Lỗi: error C2220: warning treated as error (MSVC)
-cmd# Giải pháp: Tắt warning as error
-cl /EHsc /W0 "Nhóm 9.cpp"
-```
-
-### Lỗi runtime
-
-**Lỗi:** `LOI: Khong the mo file!`
-```
-Nguyên nhân: File không tồn tại hoặc thiếu quyền truy cập
-Giải pháp: 
-- Đảm bảo chạy chương trình trong thư mục chứa .cpp
-- Tạo file rỗng với số dòng = 0:
-  echo 0 > khachhang.txt
-```
-
-**Lỗi:** Nhập số bị lỗi vòng lặp vô hạn
-```
-Nguyên nhân: Nhập text thay vì số
-Giải pháp: Code đã xử lý với cin.clear() + cin.ignore()
-Vấn đề tiếng Việt
-Windows Console UTF-8:
-cmdchcp 65001
-pharmacy.exe
-Linux/macOS: Đảm bảo locale hỗ trợ UTF-8
-bashexport LC_ALL=en_US.UTF-8
-./pharmacy
-```
-
----
-
-## 🗺️ Roadmap
-
-### Version 1.0 (Current)
-- ✅ Quản lý cơ bản: KH, NV, Thuốc, Hóa đơn
-- ✅ Hệ thống VIP tự động
-- ✅ File I/O với validation
-
-### Version 1.1 (Planned)
-- [ ] **GUI với Qt/Dear ImGui** thay console
-- [ ] **Database**: Migrate sang SQLite thay text files
-- [ ] **Reporting**: Xuất báo cáo PDF/Excel
-- [ ] **Authentication**: Hệ thống login cho nhân viên
-
-### Version 2.0 (Future)
-- [ ] **Multi-branch**: Quản lý nhiều chi nhánh
-- [ ] **Inventory alerts**: Email/SMS khi thuốc hết hạn
-- [ ] **Sales analytics**: Dashboard với biểu đồ
-- [ ] **API integration**: Kết nối hệ thống kho quốc gia
-
----
-
-## 🤝 Contributing
-
-Chúng tôi hoan nghênh mọi đóng góp! Để contribute:
-
-1. **Fork** repo này
-2. Tạo branch cho feature: `git checkout -b feature/TenTinhNang`
-3. Commit thay đổi: `git commit -m 'Add: Tính năng X'`
-4. Push lên branch: `git push origin feature/TenTinhNang`
-5. Tạo **Pull Request**
-
-### Code Style Guidelines
-- Indent: 4 spaces (không dùng tabs)
-- Comment tiếng Việt cho logic phức tạp
-- Function names: `camelCase` (ví dụ: `timKhachHang()`)
-- Class names: `PascalCase` (ví dụ: `KhachHang`)
-- Variables: `camelCase` với tên rõ nghĩa
-
-### Commit Message Format
-```
-Type: Short description
-
-[optional] Longer explanation
-
-Type: Add | Fix | Update | Refactor | Docs | Test
-```
+- **C++ Community**: For extensive STL documentation and best practices
+- **Stack Overflow**: For problem-solving assistance during development
+- **Open Source Contributors**: For inspiration from similar projects
 
 ---
 
 ## 📄 License
 
-Dự án này được phân phối dưới giấy phép **MIT License**.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+### MIT License Summary
 ```
-MIT License
-
-Copyright (c) 2026 Nhóm 9
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-Xem toàn bộ license
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-👥 Authors
-Nhóm 9 - Dự án Cuối Kỳ Lập Trình Hướng Đối Tượng
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Thành viên: [TODO: Thêm tên thành viên]
-Giảng viên hướng dẫn: [TODO: Thêm tên GV]
-Học kỳ: [TODO: HK1/2024-2025]
-
-
-📧 Contact & Support
+📞 Support & Contact
 
 Issues: GitHub Issues
-Email: TODO: pharmacy.support@example.com
-Docs: Wiki
+Discussions: GitHub Discussions
+Email: support@yourproject.com
 
 
-<div align="center">
-⭐ Nếu project hữu ích, hãy cho chúng tôi một star! ⭐
-Made with ❤️ by Nhóm 9
-</div>bạn viết bằng định dạng md cho tôi15 thg 1markdown# 🏥 Pharmacy Management System
-
-> Hệ thống quản lý nhà thuốc toàn diện với C++ - Quản lý khách hàng, nhân viên, thuốc, hóa đơn và báo cáo thống kê
+⭐ Show Your Support
+If this project helped you, please give it a ⭐️! It motivates us to continue improving.
 
 <div align="center">
-
-![C++](https://img.shields.io/badge/C++-11-blue.svg?style=flat&logo=c%2B%2B)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)
-
-</div>
-
----
-
-## 📋 Overview
-
-**Pharmacy Management System** là ứng dụng console C++ giúp quản lý toàn diện hoạt động của nhà thuốc, bao gồm:
-- Quản lý thông tin khách hàng (bao gồm hệ thống tích điểm VIP)
-- Quản lý nhân viên với tính lương tự động
-- Quản lý kho thuốc và nhà cung cấp
-- Tạo và theo dõi hóa đơn bán hàng
-- Báo cáo thống kê doanh thu và tồn kho
-
-Hệ thống được thiết kế theo hướng đối tượng (OOP) với các tính năng:
-- Kế thừa (Inheritance): `Nguoi` → `KhachHang`, `NhanVien`
-- Đóng gói (Encapsulation): Private attributes với getter/setter
-- Đa hình (Polymorphism): Virtual functions cho `xuat()`
-- Nạp chồng toán tử (Operator Overloading): `<<`, `>>` cho I/O
-
----
-
-## ✨ Features
-
-### 🧑‍🤝‍🧑 Quản lý Khách hàng
-- ✅ Thêm/sửa/xóa khách hàng với validation (SDT, email, mã trùng)
-- ✅ Hệ thống tích điểm tự động (>200 điểm → VIP)
-- ✅ Giảm giá 10% cho khách VIP
-- ✅ Tìm kiếm theo tên/SĐT/ngày sinh (không phân biệt hoa thường)
-- ✅ Lưu/đọc dữ liệu từ file `khachhang.txt`
-
-### 👨‍💼 Quản lý Nhân viên
-- ✅ Quản lý thông tin nhân viên (mã, email không trùng)
-- ✅ Tính lương tự động: `Tổng lương = Lương cơ bản × 3 + Phụ cấp`
-- ✅ Validation email (phải có `@`)
-- ✅ Tìm kiếm và báo cáo nhân viên
-- ✅ Lưu/đọc file `nhanvien.txt`
-
-### 💊 Quản lý Thuốc & Nhà cung cấp
-- ✅ Quản lý thông tin thuốc (mã, tên, giá, tồn kho, HSD)
-- ✅ Liên kết với nhà cung cấp (validation mã NCC)
-- ✅ Cảnh báo thuốc sắp hết hàng (< 10 sp)
-- ✅ Cập nhật tồn kho tự động khi bán
-- ✅ Quản lý nhà cung cấp (mã, email không trùng)
-
-### 🧾 Quản lý Hóa đơn
-- ✅ Tạo hóa đơn với nhiều loại thuốc
-- ✅ Kiểm tra tồn kho trước khi bán
-- ✅ Tự động trừ kho và cộng điểm tích lũy (1% giá trị đơn)
-- ✅ Áp dụng giảm giá VIP tự động
-- ✅ Xóa hóa đơn với hoàn trả thuốc về kho
-- ✅ Lưu chi tiết hóa đơn vào `hoadon.txt`
-
-### 📊 Thống kê & Báo cáo
-- ✅ Doanh thu tổng và theo ngày
-- ✅ Top N thuốc bán chạy nhất
-- ✅ Thống kê khách hàng (VIP/Thường, điểm TB)
-- ✅ Danh sách thuốc sắp hết hàng
-
-### 🔍 Tìm kiếm nâng cao
-- ✅ Tìm kiếm không phân biệt hoa thường
-- ✅ Hỗ trợ tìm theo nhiều tiêu chí (tên, mã, SĐT, ngày)
-
----
-
-## 🛠️ Requirements
-
-### Môi trường phát triển
-- **Compiler**: 
-  - GCC 5.0+ / Clang 3.4+ / MSVC 2015+ (hỗ trợ C++11)
-- **OS**: Windows 7+, Linux (Ubuntu 18.04+), macOS 10.12+
-- **RAM**: 512MB khả dụng
-- **Disk**: 50MB cho source code + data files
-
-### Dependencies
-- Standard Template Library (STL) - đã có sẵn trong C++11
-- Không yêu cầu thư viện ngoài (pure C++)
-
----
-
-## 🚀 Build & Run
-
-### Phương pháp 1: CMake (Khuyến nghị)
-
-<details>
-<summary><b>📦 Windows (Visual Studio / MinGW)</b></summary>
-```bash
-# Clone hoặc giải nén source code
-cd Nhom_9
-
-# Tạo thư mục build
-mkdir build && cd build
-
-# Cấu hình CMake
-cmake ..
-
-# Build (chọn 1 trong 2)
-# Với Visual Studio:
-cmake --build . --config Release
-
-# Với MinGW:
-mingw32-make
-
-# Chạy
-.\Release\PharmacyManagement.exe  # Visual Studio
-.\PharmacyManagement.exe          # MinGW
-```
-</details>
-
-<details>
-<summary><b>🐧 Linux / macOS</b></summary>
-```bash
-# Clone hoặc giải nén source code
-cd Nhom_9
-
-# Tạo và build
-mkdir build && cd build
-cmake ..
-make -j$(nproc)  # Linux
-make -j$(sysctl -n hw.ncpu)  # macOS
-
-# Chạy
-./PharmacyManagement
-```
-</details>
-
-### Phương pháp 2: Compile trực tiếp
-
-#### Linux / macOS
-```bash
-g++ -std=c++11 -o pharmacy "Nhóm 9.cpp"
-./pharmacy
-```
-
-#### Windows (MinGW)
-```cmd
-g++ -std=c++11 -o pharmacy.exe "Nhóm 9.cpp"
-pharmacy.exe
-```
-
-#### Windows (MSVC)
-```cmd
-cl /EHsc /std:c++11 "Nhóm 9.cpp" /Fe:pharmacy.exe
-pharmacy.exe
-```
-
----
-
-## 📖 Usage
-
-### Giao diện chính
-```
-============= MENU CHINH =============
-1. Quan ly khach hang
-2. Quan ly nhan vien
-3. Quan ly thuoc
-4. Quan ly hoa don
-5. Quan ly nha cung cap
-6. Tim kiem
-7. Thong ke
-0. Thoat
-======================================
-Chon:
-```
-
-### Ví dụ: Tạo hóa đơn mới
-
-**Input:**
-```
-Chon: 4
-========== QUAN LY HOA DON ==========
-1. Tao hoa don moi
-Chon: 1
-
-Ma hoa don: HD001
-Ma khach hang: KH001
-Ma nhan vien: NV001
-Ngay lap (dd/mm/yyyy): 15/01/2026
-So loai thuoc mua: 2
-
---- Thuoc thu 1 ---
-Ma thuoc: T001
-Ten thuoc: Paracetamol 500mg
-Gia ban: 50000 VND
-So luong ton: 100
-So luong mua: 10
-
---- Thuoc thu 2 ---
-Ma thuoc: T002
-Ten thuoc: Amoxicillin 250mg
-Gia ban: 75000 VND
-So luong ton: 50
-So luong mua: 5
-```
-
-**Output:**
-```
-============== HOA DON ==============
-Ma hoa don: HD001
-Ma khach hang: KH001
-Ma nhan vien: NV001
-Ngay lap: 15/01/2026
--------------------------------------
-Ma thuoc    Ten thuoc                     SL        Don gia        Thanh tien     
-----------------------------------------------------------------------------------
-T001        Paracetamol 500mg             10        50000          500000         
-T002        Amoxicillin 250mg             5         75000          375000         
-----------------------------------------------------------------------------------
-TONG TIEN:                        875000 VND
-GIAM GIA:                          87500 VND  (10% cho VIP)
-THANH TOAN:                       787500 VND
-=====================================
-
-=> Cong diem tich luy: +7.88 diem cho KH001
-```
-
-### Ví dụ: Thống kê doanh thu
-
-**Input:**
-```
-Chon: 7
-========== THONG KE & BAO CAO ==========
-2. Doanh thu theo ngay
-```
-
-**Output:**
-```
-Ngay                 Doanh thu (VND)
------------------------------------
-14/01/2026                  1250000
-15/01/2026                  2100000
-16/01/2026                   875000
-```
-
----
-
-## 📁 Project Structure
-```
-Nhóm 9/
-│
-├── Nhóm 9.cpp              # Main source code (toàn bộ logic)
-│
-├── README.md               # Tài liệu này
-├── CMakeLists.txt          # TODO: Thêm file CMake config
-│
-├── data/                   # Thư mục data files (tự tạo khi chạy)
-│   ├── khachhang.txt       # Dữ liệu khách hàng
-│   ├── nhanvien.txt        # Dữ liệu nhân viên
-│   ├── thuoc.txt           # Dữ liệu thuốc
-│   ├── nhacungcap.txt      # Dữ liệu nhà cung cấp
-│   └── hoadon.txt          # Dữ liệu hóa đơn
-│
-└── docs/                   # TODO: Thêm tài liệu kỹ thuật
-    ├── class-diagram.png   # Sơ đồ lớp UML
-    └── user-manual.pdf     # Hướng dẫn sử dụng
-```
-
-### Các lớp chính (Classes)
-
-| Class | Mô tả | File |
-|-------|-------|------|
-| `Nguoi` | Lớp trừu tượng cơ sở cho Người | Nhóm 9.cpp:43 |
-| `KhachHang` | Quản lý thông tin khách hàng + tích điểm | Nhóm 9.cpp:63 |
-| `NhanVien` | Quản lý nhân viên + tính lương | Nhóm 9.cpp:293 |
-| `NhaCungCap` | Quản lý nhà cung cấp | Nhóm 9.cpp:532 |
-| `Thuoc` | Quản lý thuốc + tồn kho | Nhóm 9.cpp:728 |
-| `ChiTietHoaDon` | Chi tiết từng dòng thuốc trong hóa đơn | Nhóm 9.cpp:965 |
-| `HoaDon` | Quản lý hóa đơn bán hàng | Nhóm 9.cpp:993 |
-| `SearchService` | Service tìm kiếm (static methods) | Nhóm 9.cpp:1423 |
-| `StatsService` | Service thống kê (static methods) | Nhóm 9.cpp:1545 |
-
----
-
-## ⚙️ Configuration
-
-### File Formats
-
-Dữ liệu được lưu dạng text với delimiter `|`:
-
-**khachhang.txt:**
-```
-3
-KH001|Nguyen Van A|01/01/1990|Nam|Ha Noi|0912345678|150.5
-KH002|Tran Thi B|15/05/1985|Nu|TP.HCM|0987654321|250.0
-```
-
-**hoadon.txt:**
-```
-HD:HD001|KH001|NV001|15/01/2026|875000|87500|787500
-CT:T001|Paracetamol 500mg|10|50000
-CT:T002|Amoxicillin 250mg|5|75000
-```
-
-### Validation Rules
-
-| Field | Rule |
-|-------|------|
-| Mã KH/NV/Thuốc/NCC | Không trùng, không rỗng |
-| Số điện thoại | 10-11 số, bắt đầu bằng `0` |
-| Email | Phải chứa `@`, không trùng |
-| Giá nhập/bán | `> 0`, giá bán `≥` giá nhập |
-| Số lượng tồn | `≥ 0` |
-| Điểm tích lũy | `≥ 0`, VIP nếu `> 200` |
-
----
-
-## 🧪 Testing
-
-### Manual Testing Checklist
-
-- [ ] **Khách hàng**
-  - [ ] Thêm KH mới với validation đầy đủ
-  - [ ] Kiểm tra hệ thống VIP tự động (>200 điểm)
-  - [ ] Sửa thông tin không làm trùng mã
-  - [ ] Xóa KH và kiểm tra ràng buộc với hóa đơn (TODO)
-
-- [ ] **Hóa đơn**
-  - [ ] Tạo hóa đơn với tồn kho đủ
-  - [ ] Kiểm tra lỗi khi tồn kho không đủ
-  - [ ] Xác nhận trừ kho tự động
-  - [ ] Kiểm tra giảm giá VIP
-  - [ ] Xóa hóa đơn và hoàn trả kho
-
-- [ ] **File I/O**
-  - [ ] Ghi và đọc lại dữ liệu không mất
-  - [ ] Xử lý file không tồn tại
-  - [ ] Xử lý dữ liệu lỗi format
-
-### Test Data (Mẫu)
-```bash
-# TODO: Thêm folder test-data/ với các file .txt mẫu
-```
-
----
-
-## 🐛 Troubleshooting
-
-### Lỗi biên dịch
-
-**Lỗi:** `'stod' is not a member of 'std'`
-```bash
-# Giải pháp: Đảm bảo compile với C++11
-g++ -std=c++11 "Nhóm 9.cpp"
-```
-
-**Lỗi:** `error C2220: warning treated as error` (MSVC)
-```cmd
-# Giải pháp: Tắt warning as error
-cl /EHsc /W0 "Nhóm 9.cpp"
-```
-
-### Lỗi runtime
-
-**Lỗi:** `LOI: Khong the mo file!`
-```
-Nguyên nhân: File không tồn tại hoặc thiếu quyền truy cập
-Giải pháp: 
-- Đảm bảo chạy chương trình trong thư mục chứa .cpp
-- Tạo file rỗng với số dòng = 0:
-  echo 0 > khachhang.txt
-```
-
-**Lỗi:** Nhập số bị lỗi vòng lặp vô hạn
-```
-Nguyên nhân: Nhập text thay vì số
-Giải pháp: Code đã xử lý với cin.clear() + cin.ignore()
-```
-
-### Vấn đề tiếng Việt
-
-**Windows Console UTF-8:**
-```cmd
-chcp 65001
-pharmacy.exe
-```
-
-**Linux/macOS:** Đảm bảo locale hỗ trợ UTF-8
-```bash
-export LC_ALL=en_US.UTF-8
-./pharmacy
-```
-
----
-
-## 🗺️ Roadmap
-
-### Version 1.0 (Current)
-- ✅ Quản lý cơ bản: KH, NV, Thuốc, Hóa đơn
-- ✅ Hệ thống VIP tự động
-- ✅ File I/O với validation
-
-### Version 1.1 (Planned)
-- [ ] **GUI với Qt/Dear ImGui** thay console
-- [ ] **Database**: Migrate sang SQLite thay text files
-- [ ] **Reporting**: Xuất báo cáo PDF/Excel
-- [ ] **Authentication**: Hệ thống login cho nhân viên
-
-### Version 2.0 (Future)
-- [ ] **Multi-branch**: Quản lý nhiều chi nhánh
-- [ ] **Inventory alerts**: Email/SMS khi thuốc hết hạn
-- [ ] **Sales analytics**: Dashboard với biểu đồ
-- [ ] **API integration**: Kết nối hệ thống kho quốc gia
-
----
-
-## 🤝 Contributing
-
-Chúng tôi hoan nghênh mọi đóng góp! Để contribute:
-
-1. **Fork** repo này
-2. Tạo branch cho feature: `git checkout -b feature/TenTinhNang`
-3. Commit thay đổi: `git commit -m 'Add: Tính năng X'`
-4. Push lên branch: `git push origin feature/TenTinhNang`
-5. Tạo **Pull Request**
-
-### Code Style Guidelines
-- Indent: 4 spaces (không dùng tabs)
-- Comment tiếng Việt cho logic phức tạp
-- Function names: `camelCase` (ví dụ: `timKhachHang()`)
-- Class names: `PascalCase` (ví dụ: `KhachHang`)
-- Variables: `camelCase` với tên rõ nghĩa
-
-### Commit Message Format
-```
-Type: Short description
-
-[optional] Longer explanation
-
-Type: Add | Fix | Update | Refactor | Docs | Test
-```
-
----
-
-## 📄 License
-
-Dự án này được phân phối dưới giấy phép **MIT License**.
-```
-MIT License
-
-Copyright (c) 2026 Nhóm 9
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-```
-
-[Xem toàn bộ license](LICENSE)
-
----
-
-## 👥 Authors
-
-**Nhóm 9** - Dự án Cuối Kỳ Lập Trình Hướng Đối Tượng
-
-- **Thành viên**: [TODO: Thêm tên thành viên]
-- **Giảng viên hướng dẫn**: [TODO: Thêm tên GV]
-- **Học kỳ**: [TODO: HK1/2024-2025]
-
----
-
-## 📧 Contact & Support
-
-- **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
-- **Email**: TODO: pharmacy.support@example.com
-- **Docs**: [Wiki](https://github.com/your-repo/wiki)
-
----
-
-<div align="center">
-
-**⭐ Nếu project hữu ích, hãy cho chúng tôi một star! ⭐**
-
-Made with ❤️ by Nhóm 9
-
-</div>
+Made with ❤️ by [Team Name]
+⬆ Back to Top
+</div>Claude est une IA et peut faire des erreurs. Veuillez vérifier les réponses.
